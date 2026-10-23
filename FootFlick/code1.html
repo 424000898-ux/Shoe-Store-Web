@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FootFlick</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #000;
+      color: #f5f5f5;
+    }
+
+    h1, h2, h3 {
+      color: #b8860b; /* Gold accents */
+    }
+
+    a {
+      text-decoration: none;
+      color: #b8860b;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #800020; /* Burgundy hover */
+    }
+
+    /* Header */
+    .header {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #b8860b;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+    .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav.center {
+  justify-content: center; 
+}
+
+.nav-left a {
+  margin-right: 15px;
+}
+
+#userArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#userArea span {
+  color: #b8860b;
+  font-weight: bold;
+}
+
+.logout-btn {
+  border: 1px solid #b8860b;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #800020;
+  color: #fff;
+}
+    /* Hero Section */
+    .hero {
+      background: url('shoe-banner.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    .hero h2 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+    .hero button {
+      background: #b8860b;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero button:hover {
+      background: #800020;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* Featured Collection */
+    .collection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      background: #111;
+    }
+    .card {
+      background: #222;
+      border: 1px solid #b8860b;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card h3 {
+      margin: 15px 0;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(184,134,11,0.5);
+    }
+
+    /* About Section */
+    .about {
+      background: url('workshop.jpg') center/cover no-repeat;
+      padding: 60px;
+      text-align: center;
+      color: #f5f5f5;
+      background-attachment: fixed;
+    }
+    .about h2 {
+      margin-bottom: 20px;
+    }
+    .about p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background: #111;
+      color: #b8860b;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #800020;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>FootFlick</h1>
+   <nav class="nav" id="navbar">
+  <div class="nav-left">
+    <a href="code1.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="collection.html">Collection</a>
+    <a href="contact.html">Contact</a>
+    <a href="trylang.html">Set Up Account</a>
+  </div>
+
+  <div class="nav-right" id="userArea">
+    <a href="login.html">Login</a>
+  </div>
+</nav>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Find Your Perfect Pair</h2>
+    <p>Luxury shoes crafted for elegance and comfort</p>
+    <button onclick="window.location.href='collection.html'">Shop Now</button>
+  </div>
+
+  <!-- Featured Collection -->
+  <section class="collection">
+    <div class="card">
+      <img src="sneaker.jpg" alt="Sneaker">
+      <h3>Sneakers</h3>
+    </div>
+    <div class="card">
+      <img src="running.jpg" alt="Heels">
+      <h3>Running Shoes</h3>
+    </div>
+    <div class="card">
+      <img src="casual.jpg" alt="Boots">
+      <h3>Casual Shoes</h3>
+    </div>
+      </section>
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2026 FootFlick. All rights reserved.</p>
+  </div>
+  <script>
+window.onload = function() {
+  let user = localStorage.getItem("loggedInUser");
+
+  let userArea = document.getElementById("userArea");
+  let navbar = document.getElementById("navbar");
+
+  if (user) {
+    userArea.innerHTML = `
+      <span>Hi, ${user} </span>
+      <a href="#" class="logout-btn" onclick="logout()">Logout</a>
+    `;
+
+    // Center nav
+    navbar.classList.add("center");
+  }
+}
+
+function logout() {
+  localStorage.removeItem("loggedInUser");
+  alert("Logged out!");
+  window.location.href = "code1.html"; 
+}
+</script>
+</body>
+</html>
+
+

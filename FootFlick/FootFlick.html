@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FootFlick</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: #111;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ff6f61;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('shoe-banner.jpg') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin: 0;
+     color: black;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+    .hero button {
+      background: #ff6f61;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .hero button:hover {
+      background: #e85b50;
+    }
+
+    /* Shoe Collection */
+    .collection {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .collection h2 {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    .shoe-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .shoe-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .shoe-card:hover {
+      transform: translateY(-5px);
+    }
+    .shoe-card img {
+      width: 100%;
+      height: auto;
+    }
+    .shoe-card h3 {
+      margin: 1rem;
+      font-size: 1.2rem;
+    }
+    .shoe-card p {
+      margin: 0 1rem 1rem;
+      color: #777;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: #f4f4f4;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .contact h2 {
+      margin-bottom: 1rem;
+    }
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact input, .contact textarea {
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact button {
+      background: #111;
+      color: #fff;
+      border: none;
+      padding: 0.8rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .contact button:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FootFlick</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#collection">Collection</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Welcome to FootFlick</h2>
+    <p>Find your perfect pair of stylish shoes</p>
+    <button>Shop Now</button>
+  </section>
+
+  <section class="collection" id="collection">
+    <h2>Shoe Collection</h2>
+    <div class="shoe-grid">
+      <div class="shoe-card">
+        <img src="running-shoes.jpg" alt="Running Shoes">
+        <h3>Running Shoes</h3>
+        <p>₱2,499</p>
+      </div>
+      <div class="shoe-card">
+        <img src="casual-shoes.jpg" alt="Casual Shoes">
+        <h3>Casual Shoes</h3>
+        <p>₱1,999</p>
+      </div>
+      <div class="shoe-card">
+        <img src="sneakers.jpg" alt="Sneakers">
+        <h3>Sneakers</h3>
+        <p>₱2,799</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 FootFlick. All rights reserved.</p>
+  </footer>
+</body>
+</html>
